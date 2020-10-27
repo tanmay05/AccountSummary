@@ -1,0 +1,41 @@
+# BRM Login Credentials 
+Username=root.0.0.0.1
+Password=&aes|08|0D5E11BFDD97D2769D9B0DBFBD1BBF7E5D40C305EDF3D77DF111AAB8F781E92122
+Hostname=172.20.168.17
+Port=11980
+
+# Application Configuration. Number of threads on which this application is going to run
+Threads=10
+
+# Size to limit the output size of the results
+FETCH_SIZE = 5000
+
+# Root logger option
+log4j.rootLogger=DEBUG, file
+
+# Redirect log messages to a log file, support file rolling.
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=__PIN_LOG_DIR__/vf_promotion_expiry_notify/vf_promotion_expiry_notify.pinlog
+log4j.appender.file.MaxFileSize=1024MB
+log4j.appender.file.MaxBackupIndex=10
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+Day_Range=30
+
+# End points for fusion service
+ServiceURL=http://wsgw.vodafone.co.nz/api/soap/internal/rs_brm/1.0
+ServiceAction=http://ws.vodafone.co.nz/api/soap/internal/rs_brm/1.0
+
+# XML Gateway Credentials Configuration
+XMLGatewayUsername=BRMuser
+XMLGatewayPassword=__WSG_PASSWD__
+XMLGatewayUsernameToken=UsernameToken-344672A7F759D2BE2E14954202676651
+
+# Email System Configuration
+EmailSourceSystem=BRM
+EmailDestinationSystem=IronPort
+
+# Comma separated for multiple Email IDs
+EmailSourceAddress=no_reply@vodafone.co.nz
+
